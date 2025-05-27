@@ -1,21 +1,20 @@
 import streamlit as st
 import google.generativeai as genai
 
-# Your FREE Google Gemini API key
-API_KEY = "AIzaSyBHYeUO1ctNG-zK-YY3SMOlP1-eTEZ18gw"  # Replace this with your real key from makersuite
+# Your Google Gemini API key
+API_KEY = "AIzaSyBHYeUO1ctNG-zK-YY3SMOlP1-eTEZ18gw"  # Replace with your actual API key
 
-# Configure the API
+# Configure Gemini
 genai.configure(api_key=API_KEY)
+model = genai.GenerativeModel("models/gemini-pro")
 
-# Initialize model (gemini-pro for text only)
-model = genai.GenerativeModel("models/gemini-1.5-flash")
-
-# Streamlit UI
+# App UI
 st.set_page_config(page_title="SAP GenAI Assistant", layout="centered")
 st.title("🧠 SAP GenAI Assistant")
-st.markdown("Ask about SAP processes, documentation, or how-tos.")
+st.markdown("Ask your SAP-related question below:")
 
-question = st.text_area("💬 Ask your SAP question:")
+# Use st.text_input for mobile-friendly input
+question = st.text_input("💬 Your SAP question:")
 
 if question:
     with st.spinner("Thinking..."):
