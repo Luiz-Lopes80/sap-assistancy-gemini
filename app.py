@@ -27,4 +27,4 @@ if question:
 
       # Footer
 st.markdown("---")
-st.markdown("Developed by Luiz Lopes – GenAI for SAP Users | v0.2")
+st.markdown("Developed by Luiz Lopes – GenAI for SAP Users | MVP v0.2")
